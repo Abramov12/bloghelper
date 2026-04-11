@@ -8,7 +8,7 @@ license = "MIT OR Apache-2.0"
 
 [dependencies]
 clap = { version = "4.5", features = ["derive"] }
-anyhow = "1.0"
+anyhow = "1.0.101"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 colored = "3.0.0"          # для красивого цветного вывода в терминале
