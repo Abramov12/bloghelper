@@ -1,0 +1,14 @@
+[package]
+name = "bloghelper"
+version = "0.1.0"
+edition = "2024"
+authors = ["Vladislav Abramov"]
+description = "CLI помощник для создания постов в Instagram и TikTok"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+anyhow = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+colored = "3.0.0"          # для красивого цветного вывода в терминале
