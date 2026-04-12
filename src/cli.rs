@@ -1,6 +1,6 @@
 use clap::{Parser, Subcommand};
 
-//use tracing::info;
+use tracing::info;
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
@@ -22,17 +22,24 @@ pub enum Commands {
     /// Показать версию программы
     Version,
 }
-pub fn run(cli: Cli) -> Result<(),()>{
+pub fn run(cli: Cli) -> anyhow::Result<()>{
     match cli.command
     {
         Some(Commands::New { topic }) => {
-            print!("Команда {topic} выполнена");
-        },
+            info!("Создаём новый пост по теме: {}", topic);
+            println!("✅ Получена команда 'new'");
+            println!("Тема: {}", topic);
+            // Здесь позже будет генерация шаблона
+        }
 
-        Some(Commands::Version) => print!("Версия 2"),
-        
-        None => ()
+        Some(Commands::Version) => {
+            println!("bloghelper версия {}", env!("CARGO_PKG_VERSION"));
+        }
+
+        None => {
+            println!("Используйте: --help");
+        }
     }
 
-    Result::Ok(())
+    Ok(())
 }
