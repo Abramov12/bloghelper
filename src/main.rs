@@ -7,6 +7,7 @@ fn main() -> Result<()> {
     let cli = Cli::parse();
     println!("Приложение запущено");
 
+    
     cli::run(cli).ok();
         
     

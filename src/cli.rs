@@ -1,4 +1,5 @@
 use clap::{Parser, Subcommand};
+
 //use tracing::info;
 
 #[derive(Parser)]
@@ -17,6 +18,7 @@ pub enum Commands {
         topic: String,
     },
 
+
     /// Показать версию программы
     Version,
 }
@@ -26,7 +28,9 @@ pub fn run(cli: Cli) -> Result<(),()>{
         Some(Commands::New { topic }) => {
             print!("Команда {topic} выполнена");
         },
+
         Some(Commands::Version) => print!("Версия 2"),
+        
         None => ()
     }
 
