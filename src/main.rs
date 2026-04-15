@@ -11,6 +11,8 @@ fn main() -> Result<()> {
         )
         .with_ansi(true)           // цветной вывод в терминале
         .init();
+
+    
     let cli = Cli::parse();
     cli::run(cli)?;
     Ok(())
